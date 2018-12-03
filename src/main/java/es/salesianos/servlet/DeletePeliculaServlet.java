@@ -8,9 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.salesianos.model.Owner;
-import es.salesianos.model.Pet;
-import es.salesianos.model.assembler.PetAssembler;
 import es.salesianos.service.OwnerService;
 import es.salesianos.service.PetService;
 
@@ -21,7 +18,7 @@ public class DeletePeliculaServlet extends HttpServlet{
 		String codPelicula = req.getParameter("codPelicula");
 
 		
-		service.searchAndDeleteDirector(Integer.parseInt(codPelicula));
+		service.searchAndDeletePelicula((Integer.parseInt(codPelicula)));
 		redirect(req, resp);
 	}
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {

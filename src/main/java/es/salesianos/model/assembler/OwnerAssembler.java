@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletRequest;
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
 import es.salesianos.model.Pelicula;
-import es.salesianos.model.PeliculasActores;
 
 public class OwnerAssembler {
 
@@ -30,29 +29,6 @@ public class OwnerAssembler {
 		return pelicula;
 	}
 	
-	public static PeliculasActores assemblePeliculasActoresFrom(HttpServletRequest req) {
-		PeliculasActores peliculasActores = new PeliculasActores();
-		
-		/*private int codPelicula;
-		private int codActor;
-		private int cache;
-		private String nomPersonaje;
-		private String foto;*/
-		int codPelicula=(Integer.parseInt(req.getParameter("codPelicula")));
-		int codActor=(Integer.parseInt(req.getParameter("codActor")));
-		int cache=(Integer.parseInt(req.getParameter("cache")));
-		String nomPersonaje=req.getParameter("nomPersonaje");
-		String foto=req.getParameter("foto");
-
-		peliculasActores.setCodPelicula(codPelicula);;
-		peliculasActores.setCodActor(codActor);;
-		peliculasActores.setCache(cache);;
-		peliculasActores.setNomPersonaje(nomPersonaje);
-		peliculasActores.setFoto(foto);;
-		
-		
-		return peliculasActores;
-	}
 	
 	public static Director assembleDirectorFrom(HttpServletRequest req) {
 		Director director = new Director();

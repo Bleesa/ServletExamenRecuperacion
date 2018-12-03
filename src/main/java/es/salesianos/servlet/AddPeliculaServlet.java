@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
-import es.salesianos.model.Owner;
 import es.salesianos.model.Pelicula;
 import es.salesianos.service.OwnerService;
 
@@ -25,17 +24,12 @@ private OwnerService service = new OwnerService();
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Pelicula pelicula = service.assemblePeliculaFromRequest(req);
-		
-		
-		
-		
-
 		service.addPelicula(pelicula);
 		redirect(req,resp);
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/addActor.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/addPelicula.jsp");
 		dispatcher.forward(req,resp);
 	}
 }

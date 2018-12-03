@@ -6,11 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
-import es.salesianos.model.Owner;
 import es.salesianos.model.Pelicula;
 import es.salesianos.model.assembler.OwnerAssembler;
 import es.salesianos.repository.Repository;
-import es.salesianos.model.PeliculasActores;
 import es.salesianos.utils.DateConverter;
 
 public class OwnerService {
@@ -41,9 +39,6 @@ public class OwnerService {
 		return repository.searchAllPeliculas();
 	}
 	
-	public List<PeliculasActores> listAllPeliculasPorActor(int codActor) {
-		return repository.searchAllPeliculasByActor(codActor);
-	}
 	
 	public void addPelicula(Pelicula pelicula) {
 		repository.insertPelicula(pelicula);
@@ -53,27 +48,7 @@ public class OwnerService {
 		repository.insertDirector(director);
 	}
 	
-	public void addPeliculasActores(PeliculasActores peliculasActores) {
-		repository.insertPeliculasActores(peliculasActores);
-	}
-
-	public void insertOrUpdate(Actor actor) {
-		//Owner userInDatabase = repository.search(ownerFormulario);
-		if(null == actor){
-			//repository.insert(ownerFormulario);
-		}else{
-			//repository.update(ownerFormulario);
-		}
-	}
 	
-	public void deleteOwner(Integer codOwner) {
-		repository.delete(codOwner);
-	}
-	
-	public Owner search(Integer codOwner) {
-		return repository.searchByCodOwner(codOwner);
-		
-	}
 
 	public Repository getRepository() {
 		return repository;

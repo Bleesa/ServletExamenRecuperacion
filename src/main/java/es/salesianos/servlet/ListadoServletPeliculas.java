@@ -12,9 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import es.salesianos.service.ListService;
 import es.salesianos.service.PetService;
 import es.salesianos.model.Actor;
-import es.salesianos.model.Owner;
 import es.salesianos.model.Pelicula;
-import es.salesianos.model.Pet;
 import es.salesianos.repository.Repository;
 
 public class ListadoServletPeliculas extends HttpServlet {
