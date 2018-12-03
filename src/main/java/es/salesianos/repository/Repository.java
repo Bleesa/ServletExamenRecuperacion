@@ -10,6 +10,7 @@ import java.util.List;
 import es.salesianos.connection.ConnectionH2;
 import es.salesianos.connection.ConnectionManager;
 import es.salesianos.model.Actor;
+import es.salesianos.model.Director;
 import es.salesianos.model.Owner;
 import es.salesianos.model.Pelicula;
 import es.salesianos.model.Pet;
@@ -96,6 +97,27 @@ public class Repository {
 					"VALUES (?, ?)");
 			preparedStatement.setString(1, pelicula.getTITTLE());
 			preparedStatement.setInt(2, pelicula.getCODOWNER());
+
+
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}finally {
+			close(preparedStatement);
+		}
+		
+		
+		manager.close(conn);
+	}
+	
+	public void insertDirector(Director director) {
+		Connection conn = manager.open(jdbcUrl);
+		PreparedStatement preparedStatement = null;
+		try {
+			preparedStatement = conn.prepareStatement("INSERT INTO DIRECTOR (NAME)" +
+					"VALUES (?)");
+			preparedStatement.setString(1, director.getName());
 
 
 			preparedStatement.executeUpdate();
@@ -239,6 +261,52 @@ public class Repository {
 		return listOwners;
 	}
 	
+	public List<Director> searchAllDirectors() {
+		List<Director> listDirectors = new ArrayList<Director>();
+		Connection conn = manager.open(jdbcUrl);
+		ResultSet resultSet = null;
+		PreparedStatement prepareStatement = null;
+		try {
+			/*
+			prepareStatement = conn.prepareStatement("
+			SELECT * FROM OWNER o, PET p INNER JOIN WHERE o.codOwner = p.codOwner");
+			while (resultSet.next()) {
+				Owner ownerInDatabase = new Owner();
+				ownerInDatabase.setCodOwner(resultSet.getInt(1));
+				ownerInDatabase.setName(resultSet.getString(2));
+				ownerInDatabase.setSurname(resultSet.getString(3));
+				Pet pet = new Pet();
+				pet.setName(resultSet.getString(4)) 
+				pet.setCodOwner(resultSet.getString(5)) 
+				ownerInDatabase.getMascotas().add(pet)
+				listOwners.add(ownerInDatabase);
+			}
+			 */
+			
+			prepareStatement = conn.prepareStatement("SELECT * FROM DIRECTOR");
+			resultSet = prepareStatement.executeQuery();
+			while (resultSet.next()) {
+				Director directorInDataBase = new Director();
+				
+				directorInDataBase.setCod(resultSet.getInt(1));
+				directorInDataBase.setName(resultSet.getString(2));
+			
+				
+				listDirectors.add(directorInDataBase);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			close(resultSet);
+			close(prepareStatement);
+			manager.close(conn);
+		}
+
+		return listDirectors;
+	}
+	
 	public List<Pelicula> searchAllPeliculas() {
 		List<Pelicula> listPeliculas = new ArrayList<Pelicula>();
 		Connection conn = manager.open(jdbcUrl);
@@ -261,17 +329,16 @@ public class Repository {
 			}
 			 */
 			
-			prepareStatement = conn.prepareStatement("SELECT * FROM peliculas");
+			prepareStatement = conn.prepareStatement("SELECT * FROM FILM");
 			resultSet = prepareStatement.executeQuery();
 			while (resultSet.next()) {
 				Pelicula peliculaInDataBase = new Pelicula();
-				/*
-				peliculaInDataBase.setCodPelicula(resultSet.getInt(1));
-				peliculaInDataBase.setTitulo(resultSet.getString(2));
-				peliculaInDataBase.setAno(resultSet.getString(3));
-				peliculaInDataBase.setTrailer(resultSet.getString(4));
-				peliculaInDataBase.setComentario(resultSet.getString(4));
-				*/
+				
+				peliculaInDataBase.setCOD(resultSet.getInt(1));
+				peliculaInDataBase.setTITTLE(resultSet.getString(2));
+				peliculaInDataBase.setCODOWNER(resultSet.getInt(3));
+
+			
 
 				
 				listPeliculas.add(peliculaInDataBase);
@@ -409,6 +476,24 @@ public class Repository {
 		try {
 			prepareStatement = conn.prepareStatement("DELETE FROM ACTOR WHERE COD = ?");
 			prepareStatement.setInt(1, codActor);
+			prepareStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			close(prepareStatement);
+		}
+		manager.close(conn);
+		return ownerInDatabase;
+	}
+	
+	public Owner searchAndDeleteDirector(Integer codDirector) {
+		Owner ownerInDatabase = null;
+		PreparedStatement prepareStatement = null;
+		Connection conn = manager.open(jdbcUrl);
+		try {
+			prepareStatement = conn.prepareStatement("DELETE FROM DIRECTOR WHERE COD = ?");
+			prepareStatement.setInt(1, codDirector);
 			prepareStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

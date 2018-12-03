@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import es.salesianos.model.Actor;
+import es.salesianos.model.Director;
 import es.salesianos.model.Owner;
 import es.salesianos.model.Pelicula;
 import es.salesianos.repository.Repository;
@@ -15,6 +16,10 @@ public class ListService {
 	
 	public List<Actor> listAllActors() {
 		return repository.searchAllActors();
+	}
+	
+	public List<Director> listAllDirectors() {
+		return repository.searchAllDirectors();
 	}
 	
 	public List<Pelicula> listAllPeliculas() {

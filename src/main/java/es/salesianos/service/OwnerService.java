@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import es.salesianos.model.Actor;
+import es.salesianos.model.Director;
 import es.salesianos.model.Owner;
 import es.salesianos.model.Pelicula;
 import es.salesianos.model.assembler.OwnerAssembler;
@@ -26,8 +27,8 @@ public class OwnerService {
 		return OwnerAssembler.assemblePeliculaFrom(req);
 	}
 	
-	public PeliculasActores assemblePeliculasActoresFromRequest(HttpServletRequest req) {
-		return OwnerAssembler.assemblePeliculasActoresFrom(req);
+	public Director assembleDirectorFromRequest(HttpServletRequest req) {
+		return OwnerAssembler.assembleDirectorFrom(req);
 	}
 	
 	public void addOwner(Actor actor) {
@@ -46,6 +47,10 @@ public class OwnerService {
 	
 	public void addPelicula(Pelicula pelicula) {
 		repository.insertPelicula(pelicula);
+	}
+	
+	public void addDirector(Director director) {
+		repository.insertDirector(director);
 	}
 	
 	public void addPeliculasActores(PeliculasActores peliculasActores) {

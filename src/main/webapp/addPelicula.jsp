@@ -10,16 +10,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insertar nuevo Actor</title>
+<title>Insertar nueva Pelicula</title>
 </head>
 <body>
-<form action="cargarListadoActores" method="post">
+<form action="cargarListadoPeliculas" method="post">
 		<input type="submit" value="ver listado">
 </form>
 
 	<%
-		List<Actor> actors = (List<Actor>) request.getAttribute("listAllActors");
-		pageContext.setAttribute("actors", actors);
+		List<Pelicula> peliculas = (List<Pelicula>) request.getAttribute("listAllPeliculas");
+		pageContext.setAttribute("peliculas", peliculas);
 
 		
 	%>
@@ -38,11 +38,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="actor1" items="${listAllActors}">
+			<c:forEach var="pelicula1" items="${listAllPeliculas}">
 				<tr>
-					<td><c:out value="${actor1.name}" /></td>
-					<td><c:out value="${actor1.yearofbirthday}" /></td>
-					<td><a href="/deleteActor?codActor=${actor1.cod}">DELETE</a>
+					<td><c:out value="${pelicula1.TITTLE}" /></td>
+					<td><c:out value="${pelicula1.CODOWNER}" /></td>
+					<td><a href="/deletePelicula?codPelicula=${pelicula1.COD}">DELETE</a>
 					</td>
 				</tr>
 			</c:forEach>

@@ -12,30 +12,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
+import es.salesianos.model.Director;
 import es.salesianos.model.Owner;
 import es.salesianos.model.Pelicula;
-import es.salesianos.model.PeliculasActores;
 import es.salesianos.service.OwnerService;
 
 /**
  * Servlet implementation class addOwnerServlet
  */
-public class AddFilmToActor extends HttpServlet {
-	
+public class AddDirectorServlet extends HttpServlet {
 private OwnerService service = new OwnerService();
-private static final Logger LOGGER = LogManager.getLogger(AddActorServlet.class.getName());
 
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		LOGGER.debug("llega al addOwnerServlet 1 !!!");
-		Actor actor = new Actor();
-	//	PeliculasActores peliculasactores = service.assemblePeliculasActoresFromRequest(req);
-		//service.addPeliculasActores(peliculasactores);
+		Director director = service.assembleDirectorFromRequest(req);
+		service.addDirector(director);
 		redirect(req,resp);
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/addDirector.jsp");
 		dispatcher.forward(req,resp);
 	}
 }

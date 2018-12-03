@@ -3,6 +3,7 @@ package es.salesianos.model.assembler;
 import javax.servlet.http.HttpServletRequest;
 
 import es.salesianos.model.Actor;
+import es.salesianos.model.Director;
 import es.salesianos.model.Pelicula;
 import es.salesianos.model.PeliculasActores;
 
@@ -51,5 +52,14 @@ public class OwnerAssembler {
 		
 		
 		return peliculasActores;
+	}
+	
+	public static Director assembleDirectorFrom(HttpServletRequest req) {
+		Director director = new Director();
+		String NAME=req.getParameter("NAME");
+		director.setName(NAME);
+		
+		
+		return director;
 	}
 }

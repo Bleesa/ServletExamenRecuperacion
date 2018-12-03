@@ -25,6 +25,14 @@ public class PetService {
 	public void searchAndDeleteActor(Integer codActor) {
 		repository.searchAndDeleteActor(codActor);
 	}
+	
+	public void searchAndDeleteDirector(Integer codDirector) {
+		repository.searchAndDeleteDirector(codDirector);
+	}
+	
+	public void searchAndDeletePelicula(Integer codPelicula) {
+		repository.searchAndDeleteDirector(codPelicula);
+	}
 
 
 	public Pet search(Integer codOwner, String petName) {
