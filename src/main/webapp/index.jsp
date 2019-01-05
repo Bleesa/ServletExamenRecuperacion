@@ -9,16 +9,16 @@
 <body>
 	
 	<div>
-		<a href="addActor.jsp">Actores</a>
+		<a href="addActor.jsp">Insertar e eleminar - ACTORES</a>
 	</div>
 	
 	<div>
-		<a href="addPelicula.jsp">Peliculas</a>
+		<a href="addPelicula.jsp"> Insertar e eleminar- PELICULAS</a>
 	</div>
 	
 	<div>
-		<a href="addDirector.jsp">Directores</a>
+		<a href="addDirector.jsp">- Insertar e eleminar - DIRECTORES</a>
 	</div>
-	<a href="peliculaactor">Asociar peliculas con actores:</a>
+	<a href="peliculaactor">Asociar peliculas con actores</a>
 </body>
 </html>

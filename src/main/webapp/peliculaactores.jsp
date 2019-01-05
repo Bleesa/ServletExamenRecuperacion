@@ -10,9 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-List<Pelicula> listAllPeliculas = (List<Pelicula>)request.getAttribute("listAllPeliculas");
-%>
+	<%
+		List<Pelicula> listAllPeliculas = (List<Pelicula>)request.getAttribute("listAllPeliculas");
+	%>
 
 
 
