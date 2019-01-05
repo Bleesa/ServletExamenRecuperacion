@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class DateConverter {
+public class RangoFechas {
 
 	public Integer getAge(Date date) {
 		Integer age = null;

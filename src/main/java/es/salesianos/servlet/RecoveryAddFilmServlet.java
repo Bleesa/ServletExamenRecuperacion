@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
 import es.salesianos.model.Pelicula;
-import es.salesianos.model.assembler.OwnerAssembler;
+import es.salesianos.model.assembler.PrincipalAssembler;
 import es.salesianos.service.OwnerService;
 
 /**
@@ -24,7 +24,7 @@ private OwnerService service = new OwnerService();
 
 @Override
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	Pelicula pelicula = OwnerAssembler.assemblePeliculaFrom(req);
+	Pelicula pelicula = PrincipalAssembler.assemblePeliculaFrom(req);
 	service.addPelicula(pelicula);
 	doAction(req, resp);
 }

@@ -33,8 +33,8 @@
 		<thead>
 			<tr>
 				<td>TITLE</td>
-				<td>CODOWNER</td>
-				<td>Borrar</td>
+				<td>CODPELICULA</td>
+				<td>Borrar Pelicula</td>
 			</tr>
 		</thead>
 		<tbody>

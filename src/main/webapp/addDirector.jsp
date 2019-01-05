@@ -32,7 +32,7 @@
 		<thead>
 			<tr>
 				<td>NOMBRE DIRECTOR</td>
-				<td>Borrar</td>
+				<td>Borrar Director</td>
 			</tr>
 		</thead>
 		<tbody>

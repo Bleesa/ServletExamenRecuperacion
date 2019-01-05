@@ -18,6 +18,7 @@
 		 request.getAttribute("codPelicula");
 	%>
 
+
 	<table border="1">
 		<thead>
 			<tr>

@@ -6,7 +6,7 @@ import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
 import es.salesianos.model.Pelicula;
 
-public class OwnerAssembler {
+public class PrincipalAssembler {
 
 	public static Actor assembleOwnerFrom(HttpServletRequest req) {
 		Actor actor = new Actor();
@@ -28,7 +28,6 @@ public class OwnerAssembler {
 		
 		return pelicula;
 	}
-	
 	
 	public static Director assembleDirectorFrom(HttpServletRequest req) {
 		Director director = new Director();

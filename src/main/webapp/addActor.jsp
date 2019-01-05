@@ -36,12 +36,13 @@
 		<input type="text" name="endDate">
 		<input type="submit">
 	</form>
+	
 	<table border="1">
 		<thead>
 			<tr>
 				<td>Name</td>
 				<td>AÑO</td>
-				<td>Borrar</td>
+				<td>Borrar Actor</td>
 			</tr>
 		</thead>
 		<tbody>

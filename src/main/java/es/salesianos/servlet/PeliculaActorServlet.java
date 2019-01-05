@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Pelicula;
-import es.salesianos.model.assembler.OwnerAssembler;
+import es.salesianos.model.assembler.PrincipalAssembler;
 import es.salesianos.service.OwnerService;
 import es.salesianos.service.PetService;
 
@@ -27,7 +27,7 @@ public class PeliculaActorServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Pelicula pelicula = OwnerAssembler.assemblePeliculaFrom(req);
+		Pelicula pelicula = PrincipalAssembler.assemblePeliculaFrom(req);
 		service.addPelicula(pelicula);
 	}
 

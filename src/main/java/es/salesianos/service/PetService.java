@@ -1,14 +1,12 @@
 package es.salesianos.service;
 
-import javax.servlet.http.HttpServletRequest;
-
 import es.salesianos.repository.Repository;
-import es.salesianos.utils.DateConverter;
+import es.salesianos.utils.RangoFechas;
 
 public class PetService {
 
 	private Repository repository = new Repository();
-	private DateConverter converter = new DateConverter();
+	private RangoFechas converter = new RangoFechas();
 	
 	
 	
@@ -24,7 +22,6 @@ public class PetService {
 	public void searchAndDeletePelicula(Integer codPelicula) {
 		repository.searchAndDeletePelicula(codPelicula);
 	}
-
 
 
 }
