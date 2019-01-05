@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Pelicula {
+public class Film {
 	private Integer COD;
 	private String TITTLE;
 	private Integer CODOWNER;

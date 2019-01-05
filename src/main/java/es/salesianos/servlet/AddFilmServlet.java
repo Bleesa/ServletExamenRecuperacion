@@ -12,19 +12,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
-import es.salesianos.model.Pelicula;
+import es.salesianos.model.Film;
 import es.salesianos.service.OwnerService;
 
 /**
  * Servlet implementation class addOwnerServlet
  */
-public class AddPeliculaServlet extends HttpServlet {
+public class AddFilmServlet extends HttpServlet {
 private OwnerService service = new OwnerService();
 
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Pelicula pelicula = service.assemblePeliculaFromRequest(req);
-		service.addPelicula(pelicula);
+		Film film = service.assemblePeliculaFromRequest(req);
+		service.addFilm(film);
 		redirect(req,resp);
 	}
 

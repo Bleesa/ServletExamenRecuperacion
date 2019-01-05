@@ -14,7 +14,9 @@
 
 
 	<form action="/fillPeliculaActor?codPelicula=${codPelicula}&codActor=${codActor}" method="post">
-		<span>Cache:</span> <input type="text" name="cache"> <br /> <span>Rol:</span>
+		<span>Cache:</span> <input type="text" name="cache"> 
+		<br /> 
+		<span>Rol:</span>
 		<input type="text" name="role"> <br /> <input type="submit">
 	</form>
 

@@ -25,14 +25,14 @@
 	%>
 
 	<form action="AddActor" method="post">
-		<span>Nombre:</span><input type="text" name="NAME">
-		<span>Fecha Nacimiento</span><input type="number" name="YEAROFBIRTHDAY">
+		<span>Name:</span><input type="text" name="NAME">
+		<span>Year of Birthday</span><input type="number" name="YEAROFBIRTHDAY">
 		<input type="submit">
 	</form>
 	<form action="AddActor" method="post">
-		<span>De:</span>
+		<span>The:</span>
 		<input type="text" name="beginDate">
-		<span>Hasta:</span>
+		<span>End:</span>
 		<input type="text" name="endDate">
 		<input type="submit">
 	</form>
@@ -41,8 +41,8 @@
 		<thead>
 			<tr>
 				<td>Name</td>
-				<td>AÑO</td>
-				<td>Borrar Actor</td>
+				<td>Year</td>
+				<td>Delete Actor</td>
 			</tr>
 		</thead>
 		<tbody>

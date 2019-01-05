@@ -12,19 +12,19 @@ import javax.servlet.http.HttpServletResponse;
 import es.salesianos.service.ListService;
 import es.salesianos.service.PetService;
 import es.salesianos.model.Actor;
-import es.salesianos.model.Pelicula;
+import es.salesianos.model.Film;
 import es.salesianos.repository.Repository;
 
-public class ListadoServletPeliculas extends HttpServlet {
+public class ListadoServletFilms extends HttpServlet {
 	
 	private ListService servicio = new  ListService();
 	private Repository repository = new  Repository();
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Pelicula> listAllPeliculas = servicio.listAllPeliculas();
+		List<Film> listAllFilms = servicio.listAllFilms();
 			
-		req.setAttribute("listAllPeliculas", listAllPeliculas);
+		req.setAttribute("listAllPeliculas", listAllFilms);
 
 		redirect(req,resp);
 	}

@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
-import es.salesianos.model.Pelicula;
-import es.salesianos.model.PeliculaActores;
+import es.salesianos.model.Film;
+import es.salesianos.model.FilmsActors;
 import es.salesianos.model.assembler.PrincipalAssembler;
 import es.salesianos.repository.Repository;
 import es.salesianos.utils.RangoFechas;
@@ -23,7 +23,7 @@ public class OwnerService {
 	public Actor assembleOwnerFromRequest(HttpServletRequest req) {
 		return PrincipalAssembler.assembleOwnerFrom(req);
 	}
-	public Pelicula assemblePeliculaFromRequest(HttpServletRequest req) {
+	public Film assemblePeliculaFromRequest(HttpServletRequest req) {
 		return PrincipalAssembler.assemblePeliculaFrom(req);
 	}
 	
@@ -36,13 +36,13 @@ public class OwnerService {
 	}
 	
 	
-	public List<Pelicula> listAllPeliculas() {
-		return repository.searchAllPeliculas();
+	public List<Film> listAllFilms() {
+		return repository.searchAllFilms();
 	}
 	
 	
-	public void addPelicula(Pelicula pelicula) {
-		repository.insertPelicula(pelicula);
+	public void addFilm(Film film) {
+		repository.insertFilm(film);
 	}
 	
 	public void addDirector(Director director) {
@@ -58,8 +58,8 @@ public class OwnerService {
 		return repository.selectAllActor();
 	}
 	
-	public void insert(PeliculaActores peliculaActor) {
-		repository.insert(peliculaActor);;
+	public void insert(FilmsActors filmActor) {
+		repository.insert(filmActor);;
 	}
 	
 	public Repository getRepository() {

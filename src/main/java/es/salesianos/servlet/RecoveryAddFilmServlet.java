@@ -5,13 +5,12 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
-import es.salesianos.model.Pelicula;
+import es.salesianos.model.Film;
 import es.salesianos.model.assembler.PrincipalAssembler;
 import es.salesianos.service.OwnerService;
 
@@ -24,22 +23,22 @@ private OwnerService service = new OwnerService();
 
 @Override
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	Pelicula pelicula = PrincipalAssembler.assemblePeliculaFrom(req);
-	service.addPelicula(pelicula);
+	Film film = PrincipalAssembler.assemblePeliculaFrom(req);
+	service.addFilm(film);
 	doAction(req, resp);
 }
 
 @Override	
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	String codPelicula = req.getParameter("cod");
+		String codFilm = req.getParameter("cod");
 
-	req.setAttribute("codPelicula", codPelicula);
+		req.setAttribute("codPelicula", codFilm);
 	doAction(req, resp);
 }
 
 private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-	List<Actor> listAllActores = service.selectAllActor();
-	req.setAttribute("listAllActores", listAllActores);
+	List<Actor> listAllActors = service.selectAllActor();
+	req.setAttribute("listAllActores", listAllActors);
 	redirect(req, resp);
 }
 

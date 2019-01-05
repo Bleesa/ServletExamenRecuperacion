@@ -28,14 +28,14 @@ private OwnerService service = new OwnerService();
 		if (parameter != null) {
 			int beginDate = Integer.parseInt(req.getParameter("beginDate"));
 			int endDate = Integer.parseInt(req.getParameter("endDate"));
-			List<Actor> listAllActores = service.filterAllActor(beginDate, endDate);
-			req.setAttribute("listAllActors", listAllActores);
+			List<Actor> listAllActor = service.filterAllActor(beginDate, endDate);
+			req.setAttribute("listAllActors", listAllActor);
 		} else {
 			Actor actor = service.assembleOwnerFromRequest(req);
 
 			service.addOwner(actor);
-			List<Actor> listAllActores = service.selectAllActor();
-			req.setAttribute("listAllActors", listAllActores);
+			List<Actor> listAllActors = service.selectAllActor();
+			req.setAttribute("listAllActors", listAllActors);
 		}
 		
 		redirect(req,resp);

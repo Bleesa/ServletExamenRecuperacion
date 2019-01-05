@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
-import es.salesianos.model.Pelicula;
+import es.salesianos.model.Film;
 import es.salesianos.service.OwnerService;
 
 /**

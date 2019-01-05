@@ -1,9 +1,9 @@
 package es.salesianos.model;
 
-public class PeliculaActores {
+public class FilmsActors {
 	private int cache;
 	private String role;
-	private int codPelicula;
+	private int codFilm;
 	private int codActor;
 
 	public int getCache() {
@@ -19,10 +19,10 @@ public class PeliculaActores {
 		this.role = role;
 	}
 	public int getCodPelicula() {
-		return codPelicula;
+		return codFilm;
 	}
 	public void setCodPelicula(int codPelicula) {
-		this.codPelicula = codPelicula;
+		this.codFilm = codPelicula;
 	}
 	public int getCodActor() {
 		return codActor;

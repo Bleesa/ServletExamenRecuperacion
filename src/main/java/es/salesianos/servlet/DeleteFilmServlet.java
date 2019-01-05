@@ -11,14 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import es.salesianos.service.OwnerService;
 import es.salesianos.service.PetService;
 
-public class DeletePeliculaServlet extends HttpServlet{
+public class DeleteFilmServlet extends HttpServlet{
 	private PetService service = new PetService();
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String codPelicula = req.getParameter("codPelicula");
+		String codFilm = req.getParameter("codPelicula");
 
 		
-		service.searchAndDeletePelicula((Integer.parseInt(codPelicula)));
+		service.searchAndDeletePelicula((Integer.parseInt(codFilm)));
 		redirect(req, resp);
 	}
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {

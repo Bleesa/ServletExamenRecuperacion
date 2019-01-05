@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
-import es.salesianos.model.Pelicula;
+import es.salesianos.model.Film;
 
 public class PrincipalAssembler {
 
@@ -17,16 +17,16 @@ public class PrincipalAssembler {
 		return actor;
 	}
 	
-	public static Pelicula assemblePeliculaFrom(HttpServletRequest req) {
-		Pelicula pelicula = new Pelicula();
-		String titulo=req.getParameter("TITTLE");
+	public static Film assemblePeliculaFrom(HttpServletRequest req) {
+		Film film = new Film();
+		String title=req.getParameter("TITTLE");
 		Integer codowner=Integer.parseInt(req.getParameter("CODOWNER"));
 
-		pelicula.setTITTLE(titulo);
-		pelicula.setCODOWNER(codowner);
+		film.setTITTLE(title);
+		film.setCODOWNER(codowner);
 		
 		
-		return pelicula;
+		return film;
 	}
 	
 	public static Director assembleDirectorFrom(HttpServletRequest req) {

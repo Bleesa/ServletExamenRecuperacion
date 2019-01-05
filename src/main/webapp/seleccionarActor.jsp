@@ -23,9 +23,9 @@
 		<thead>
 			<tr>
 				<td>Cod Actor</td>
-				<td>Nombre actor</td>
-				<td>año</td>
-				<td>Seleccionar</td>
+				<td>Name actor</td>
+				<td>Year</td>
+				<td>Select</td>
 			</tr>
 		</thead>
 		<tbody>

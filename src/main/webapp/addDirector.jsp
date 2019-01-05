@@ -25,14 +25,14 @@
 	%>
 
 	<form action="AddDirector" method="post">
-		<span>Nombre director</span><input type="text" name="NAME">
+		<span>Name director</span><input type="text" name="NAME">
 		<input type="submit">
 	</form>
 	<table border="1">
 		<thead>
 			<tr>
-				<td>NOMBRE DIRECTOR</td>
-				<td>Borrar Director</td>
+				<td>Name DIRECTOR</td>
+				<td>Delete Director</td>
 			</tr>
 		</thead>
 		<tbody>

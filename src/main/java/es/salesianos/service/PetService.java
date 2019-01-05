@@ -19,8 +19,8 @@ public class PetService {
 		repository.searchAndDeleteDirector(codDirector);
 	}
 	
-	public void searchAndDeletePelicula(Integer codPelicula) {
-		repository.searchAndDeletePelicula(codPelicula);
+	public void searchAndDeletePelicula(Integer codFilm) {
+		repository.searchAndDeletePelicula(codFilm);
 	}
 
 

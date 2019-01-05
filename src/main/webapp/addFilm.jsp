@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insertar nueva Pelicula</title>
+<title>Insertar nueva Film</title>
 </head>
 <body>
 <form action="cargarListadoPeliculas" method="post">
@@ -18,23 +18,21 @@
 </form>
 
 	<%
-		List<Pelicula> peliculas = (List<Pelicula>) request.getAttribute("listAllPeliculas");
-		pageContext.setAttribute("peliculas", peliculas);
-
-		
+		List<Film> films = (List<Film>) request.getAttribute("listAllPeliculas");
+			pageContext.setAttribute("peliculas", films);
 	%>
 
 	<form action="AddPelicula" method="post">
-		<span>Titulo:</span><input type="text" name="TITTLE">
-		<span>Codigo director</span><input type="number" name="CODOWNER">
+		<span>Title:</span><input type="text" name="TITTLE">
+		<span>Cod Director</span><input type="number" name="CODOWNER">
 		<input type="submit">
 	</form>
 	<table border="1">
 		<thead>
 			<tr>
 				<td>TITLE</td>
-				<td>CODPELICULA</td>
-				<td>Borrar Pelicula</td>
+				<td>CODFilm</td>
+				<td>Delete Film</td>
 			</tr>
 		</thead>
 		<tbody>

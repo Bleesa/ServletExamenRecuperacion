@@ -29,7 +29,7 @@
 		</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>AddPeliculaServlet</servlet-name>
+    <servlet-name>AddPeliculaSServlet</servlet-name>
     <servlet-class>es.salesianos.servlet.AddPeliculaServlet
 		</servlet-class>
   </servlet>
