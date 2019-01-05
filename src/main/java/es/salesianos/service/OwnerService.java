@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
 import es.salesianos.model.Pelicula;
+import es.salesianos.model.PeliculaActores;
 import es.salesianos.model.assembler.OwnerAssembler;
 import es.salesianos.repository.Repository;
 import es.salesianos.utils.DateConverter;
@@ -49,7 +50,18 @@ public class OwnerService {
 	}
 	
 	
-
+	public List<Actor> filterAllActor(int beginDate, int endDate) {
+		return repository.filterAllActor(beginDate, endDate);
+	}
+	
+	public List<Actor> selectAllActor() {
+		return repository.selectAllActor();
+	}
+	
+	public void insert(PeliculaActores peliculaActor) {
+		repository.insert(peliculaActor);;
+	}
+	
 	public Repository getRepository() {
 		return repository;
 	}

@@ -29,6 +29,13 @@
 		<span>Fecha Nacimiento</span><input type="number" name="YEAROFBIRTHDAY">
 		<input type="submit">
 	</form>
+	<form action="AddActor" method="post">
+		<span>De:</span>
+		<input type="text" name="beginDate">
+		<span>Hasta:</span>
+		<input type="text" name="endDate">
+		<input type="submit">
+	</form>
 	<table border="1">
 		<thead>
 			<tr>

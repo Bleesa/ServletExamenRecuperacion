@@ -19,5 +19,6 @@
 	<div>
 		<a href="addDirector.jsp">Directores</a>
 	</div>
+	<a href="peliculaactor">Asociar peliculas con actores:</a>
 </body>
 </html>

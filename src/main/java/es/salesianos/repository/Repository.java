@@ -12,6 +12,7 @@ import es.salesianos.connection.ConnectionManager;
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
 import es.salesianos.model.Pelicula;
+import es.salesianos.model.PeliculaActores;
 
 
 
@@ -308,6 +309,84 @@ public class Repository {
 		}
 		manager.close(conn);
 		return ownerInDatabase;
+	}
+	
+	public List<Actor> filterAllActor(int beginDate, int endDate) {
+		Connection conn = manager.open(jdbcUrl);
+		PreparedStatement preparedStatement = null;
+		List<Actor> list = new ArrayList<Actor>();
+		try {
+			preparedStatement = conn
+					.prepareStatement("SELECT * FROM ACTOR WHERE yearOfBirthDate BETWEEN (?) AND (?)");
+			preparedStatement.setInt(1, beginDate);
+			preparedStatement.setInt(2, endDate);
+			System.out.println("llego");
+			System.out.println(beginDate);
+			System.out.println(endDate);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				Actor actor = new Actor();
+				actor.setCod(resultSet.getInt(1));
+				actor.setName(resultSet.getNString(2));
+				actor.setYearofbirthday(resultSet.getInt(3));
+				list.add(actor);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			close(preparedStatement);
+			manager.close(conn);
+		}
+		return list;
+	}
+	
+	public List<Actor> selectAllActor() {
+		Connection conn = manager.open(jdbcUrl);
+		PreparedStatement preparedStatement = null;
+		List<Actor> list = new ArrayList<Actor>();
+		try {
+			preparedStatement = conn
+					.prepareStatement("SELECT * FROM ACTOR");
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				Actor actor = new Actor();
+				actor.setCod(resultSet.getInt(1));
+				actor.setName(resultSet.getNString(2));
+				actor.setYearofbirthday(resultSet.getInt(3));
+				list.add(actor);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			close(preparedStatement);
+			manager.close(conn);
+}
+		return list;
+	}
+	
+	public void insert(PeliculaActores peliculaActor) {
+		Connection conn = manager.open(jdbcUrl);
+		PreparedStatement preparedStatement = null;
+		try {
+			preparedStatement = conn
+					.prepareStatement("INSERT INTO FILMACTOR (cache, role, codActor, codFilm)" + "VALUES (?, ?, ?, ?)");
+			preparedStatement.setInt(1, peliculaActor.getCache());
+			preparedStatement.setString(2, peliculaActor.getRole());
+			preparedStatement.setInt(3, peliculaActor.getCodActor());
+			preparedStatement.setInt(4, peliculaActor.getCodPelicula());
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			close(preparedStatement);
+			manager.close(conn);
+		}
+
 	}
 
 
