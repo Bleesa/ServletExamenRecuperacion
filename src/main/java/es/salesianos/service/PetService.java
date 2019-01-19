@@ -6,7 +6,7 @@ import es.salesianos.utils.RangoFechas;
 public class PetService {
 
 	private Repository repository = new Repository();
-	private RangoFechas converter = new RangoFechas();
+	private RangoFechas conver = new RangoFechas();
 	
 	
 	

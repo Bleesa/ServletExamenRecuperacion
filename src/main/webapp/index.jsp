@@ -19,6 +19,6 @@
 	<div>
 		<a href="addDirector.jsp"> Insert and Delete - DIRECTORS</a>
 	</div>
-	<a href="filmactores"> Associate movies with actors</a>
+		<a href="filmactores"> Associate movies with actors</a>
 </body>
 </html>
