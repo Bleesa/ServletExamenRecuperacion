@@ -18,7 +18,7 @@
 </form>
 
 	<%
-		List<Film> films = (List<Film>) request.getAttribute("listAllPeliculas");
+		List<Film> films = (List<Film>) request.getAttribute("listAllFilms");
 			pageContext.setAttribute("peliculas", films);
 	%>
 

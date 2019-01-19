@@ -13,12 +13,12 @@
 	</div>
 	
 	<div>
-		<a href="addPelicula.jsp"> Insert and Delete- FILMS</a>
+		<a href="addFilm.jsp"> Insert and Delete- FILMS</a>
 	</div>
 	
 	<div>
 		<a href="addDirector.jsp"> Insert and Delete - DIRECTORS</a>
 	</div>
-	<a href="peliculaactor"> Associate movies with actors</a>
+	<a href="filmactores"> Associate movies with actors</a>
 </body>
 </html>

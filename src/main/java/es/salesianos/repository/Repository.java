@@ -105,8 +105,6 @@ public class Repository {
 	}
 	
 
-	
-
 	public List<Actor> searchActors() {
 		List<Actor> listActors = new ArrayList<Actor>();
 		Connection conn = manager.open(jdbcUrl);

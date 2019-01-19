@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_1.xsd" version="3.1">
   <display-name>HelloWorld Application</display-name>
   <description>
-		ESTO ES UNA MIEDA
+		ESTO ES UNA MIERDA
 	</description>
   <servlet>
     <servlet-name>listadoActores</servlet-name>
@@ -14,8 +14,8 @@
 		</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>listadoPeliculas</servlet-name>
-    <servlet-class>es.salesianos.servlet.ListadoServletPeliculas
+    <servlet-name>listadoFilms</servlet-name>
+    <servlet-class>es.salesianos.servlet.ListadoServletFilms
 		</servlet-class>
   </servlet>
   <servlet>
@@ -29,8 +29,8 @@
 		</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>AddPeliculaSServlet</servlet-name>
-    <servlet-class>es.salesianos.servlet.AddPeliculaServlet
+    <servlet-name>AddFilmServlet</servlet-name>
+    <servlet-class>es.salesianos.servlet.AddFilmServlet
 		</servlet-class>
   </servlet>
   <servlet>
@@ -39,8 +39,8 @@
 		</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>DeletePeliculaServlet</servlet-name>
-    <servlet-class>es.salesianos.servlet.DeletePeliculaServlet
+    <servlet-name>DeleteFilmServlet</servlet-name>
+    <servlet-class>es.salesianos.servlet.DeleteFilmServlet
 		</servlet-class>
   </servlet>
   <servlet>
@@ -49,8 +49,8 @@
 		</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>PeliculaActorServlet</servlet-name>
-    <servlet-class>es.salesianos.servlet.PeliculaActorServlet
+    <servlet-name>FilmActorServlet</servlet-name>
+    <servlet-class>es.salesianos.servlet.FilmActorServlet
 		</servlet-class>
   </servlet>
   <servlet>
@@ -59,8 +59,8 @@
 		</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>FillPeliculaActorServlet</servlet-name>
-    <servlet-class>es.salesianos.servlet.FillPeliculaActorServlet
+    <servlet-name>FillFilmActorServlet</servlet-name>
+    <servlet-class>es.salesianos.servlet.FillFilmActorServlet
 		</servlet-class>
   </servlet>
   <servlet-mapping>
@@ -76,8 +76,8 @@
     <url-pattern>cargarListadoDirectores</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>listadoPeliculas</servlet-name>
-    <url-pattern>cargarListadoPeliculas</url-pattern>
+    <servlet-name>listadoFilms</servlet-name>
+    <url-pattern>cargarListadoFilms</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>DeleteActorServlet</servlet-name>
@@ -88,20 +88,20 @@
     <url-pattern>/deleteDirector</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>DeletePeliculaServlet</servlet-name>
-    <url-pattern>/deletePelicula</url-pattern>
+    <servlet-name>DeleteFilmServlet</servlet-name>
+    <url-pattern>/deleteFilm</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>AddPeliculaServlet</servlet-name>
-    <url-pattern>AddPelicula</url-pattern>
+    <servlet-name>AddFilmServlet</servlet-name>
+    <url-pattern>AddFilm</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AddDirectorServlet</servlet-name>
     <url-pattern>AddDirector</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>PeliculaActorServlet</servlet-name>
-    <url-pattern>/peliculaactor</url-pattern>
+    <servlet-name>FilmActorServlet</servlet-name>
+    <url-pattern>/filmactor</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>RecoveryAddFilmServlet</servlet-name>
